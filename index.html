@@ -1045,24 +1045,18 @@
   }
   .mini-folder:hover .mf-arrow { color: #fff; opacity: 1; }
 
-  /* ---------- SCROLL-SNAP for Acts 3, 4, 5 (slide-like advance) ---------- */
-  html { scroll-snap-type: y proximity; }
-
-  /* Header lands at top when entering each act */
+  /* Scroll-margin only — so anchored jumps land below the sticky header.
+     Snap behavior removed so users can read pages at natural pace. */
   #act3 .section-header,
   #act4 .section-header,
   #act5 .section-header {
-    scroll-snap-align: start;
     scroll-margin-top: 70px;
   }
-  /* Each subsection h3 snaps to top */
   #act3 .container > h3,
   #act4 .container > h3,
   #act5 .container > h3 {
-    scroll-snap-align: start;
     scroll-margin-top: 90px;
   }
-  /* Major visuals snap as their own slides */
   #act3 .quadrant,
   #act3 .debt-test,
   #act3 .sorter,
@@ -1075,7 +1069,6 @@
   #act5 .calc,
   #act5 .vs-grid,
   #act5 .machine {
-    scroll-snap-align: start;
     scroll-margin-top: 100px;
   }
 
