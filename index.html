@@ -6630,112 +6630,36 @@
     </div>
 
     <div class="pm-toolbar">
-      <button class="pm-copy" onclick="copyModalText(this, 'masterSrc')">Copy The Whole Prompt <span class="arrow">→</span></button>
+      <button class="pm-copy" onclick="copyModalText(this, 'masterSrc')">Copy The Prompt <span class="arrow">→</span></button>
       <div class="pm-stats">
         <span><strong>12</strong>Sections</span>
-        <span><strong>~5min</strong>To Fill In</span>
+        <span><strong>Paste</strong>&amp; Run</span>
         <span><strong>17yr</strong>Reading Level</span>
       </div>
     </div>
 
     <div class="pm-body">
 
-      <div class="pm-intro">
-        <strong>You are an expert startup advisor and small business strategist.</strong> You've coached hundreds of young founders from idea to first revenue. You speak plainly, you ask sharp questions, and you don't sugarcoat.
-        <br/><br/>
-        I am 17 years old. I live in <em style="color:#fff;font-style:normal;border-bottom: 1px dashed rgba(255,255,255,0.3); padding: 0 4px;">your town/community</em>. I'm building this business plan as part of a school project on financial literacy and entrepreneurship, but I want it to be real — something I could actually start.
+      <!-- Pre-flight checklist for Mike · ask the class first -->
+      <div style="margin-bottom: 32px; padding: 28px 30px 24px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); border-left: 5px solid #fff; border-radius: 0 12px 12px 0;">
+        <div style="font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(255,255,255,0.6); font-weight: 800; margin-bottom: 14px;">Step 1 · Engage The Class</div>
+        <div style="font-size: clamp(18px, 1.5vw, 22px); color: #fff; line-height: 1.45; margin-bottom: 16px; font-weight: 600;">First, pick a student. Ask them about their idea. Type their answers straight into Claude:</div>
+        <ul style="margin: 0 0 14px 0; padding-left: 22px; font-size: clamp(16px, 1.3vw, 19px); line-height: 1.75; color: rgba(255,255,255,0.82);">
+          <li><strong style="color:#fff">What's the business?</strong> What does it do?</li>
+          <li><strong style="color:#fff">Who is it for?</strong> Age, location, situation.</li>
+          <li><strong style="color:#fff">What problem does it solve?</strong></li>
+          <li><strong style="color:#fff">Money + hours</strong> to start with.</li>
+          <li><strong style="color:#fff">6-month and 12-month goals.</strong></li>
+        </ul>
+        <div style="font-size: 14.5px; color: rgba(255,255,255,0.6); font-style: italic; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1);">Once Claude knows the idea, paste the prompt below. <strong style="color:#fff; font-style:normal">Step 2 →</strong></div>
       </div>
 
       <section class="pm-sec">
         <div class="pm-sec-head">
-          <div class="pm-sec-num">01</div>
-          <div class="pm-sec-title">My Business Idea</div>
-        </div>
-        <div class="pm-field">
-          <div class="q">What the business does <em>(one or two sentences)</em></div>
-          <div class="blank"></div>
-        </div>
-        <div class="pm-field">
-          <div class="q">Why this idea? What made me think of it?</div>
-          <div class="blank"></div>
-        </div>
-        <div class="pm-field">
-          <div class="q">Who is this <strong>FOR</strong>? <em>(age, location, situation, what they're struggling with)</em></div>
-          <div class="blank"></div>
-        </div>
-        <div class="pm-field">
-          <div class="q">What problem does it solve — or what feeling does it give them?</div>
-          <div class="blank"></div>
-        </div>
-      </section>
-
-      <section class="pm-sec">
-        <div class="pm-sec-head">
-          <div class="pm-sec-num">02</div>
-          <div class="pm-sec-title">What I'm Working With</div>
-        </div>
-        <div class="pm-field">
-          <div class="q">Money I can start with <em>(be honest — even $50 is fine)</em></div>
-          <div class="pm-field-pair"><div class="blank"></div><div class="unit">$ CAD</div></div>
-        </div>
-        <div class="pm-field">
-          <div class="q">Hours per week I can actually commit</div>
-          <div class="pm-field-pair"><div class="blank"></div><div class="unit">hrs / wk</div></div>
-        </div>
-        <div class="pm-field">
-          <div class="q">Skills I already have <em>(e.g., I'm good at TikTok, I can draw, I speak two languages)</em></div>
-          <div class="blank"></div>
-        </div>
-        <div class="pm-field">
-          <div class="q">Things I'll need to learn <em>(be honest)</em></div>
-          <div class="blank"></div>
-        </div>
-        <div class="pm-field">
-          <div class="q">Tools/resources I have access to <em>(phone, laptop, car, family who can help)</em></div>
-          <div class="blank"></div>
-        </div>
-      </section>
-
-      <section class="pm-sec">
-        <div class="pm-sec-head">
-          <div class="pm-sec-num">03</div>
-          <div class="pm-sec-title">What I Already Know</div>
-        </div>
-        <div class="pm-field">
-          <div class="q">Other businesses doing something similar <em>(or "none that I know of")</em></div>
-          <div class="blank"></div>
-        </div>
-        <div class="pm-field">
-          <div class="q">Why my version will be different or better</div>
-          <div class="blank"></div>
-        </div>
-        <div class="pm-field">
-          <div class="q">What I think I'll charge per customer / per sale</div>
-          <div class="pm-field-pair"><div class="blank"></div><div class="unit">$ CAD</div></div>
-        </div>
-      </section>
-
-      <section class="pm-sec">
-        <div class="pm-sec-head">
-          <div class="pm-sec-num">04</div>
-          <div class="pm-sec-title">My Goal</div>
-        </div>
-        <div class="pm-field">
-          <div class="q">By 6 months from now, I want this business to —</div>
-          <div class="blank"></div>
-        </div>
-        <div class="pm-field">
-          <div class="q">By 12 months from now, I want this business to —</div>
-          <div class="blank"></div>
-        </div>
-      </section>
-
-      <section class="pm-sec">
-        <div class="pm-sec-head">
-          <div class="pm-sec-num">05</div>
+          <div class="pm-sec-num">→</div>
           <div class="pm-sec-title">What I Need You To Build</div>
         </div>
-        <p class="pm-sec-intro">Based on everything above, build me a complete, real-world business plan in <strong style="color:#fff">exactly these 12 sections, in this order.</strong> Write at a level a 17-year-old can actually use — no jargon, no MBA-speak. Be encouraging but honest. If my idea has a fatal flaw, tell me.</p>
+        <p class="pm-sec-intro">Based on the business idea I just described above, build me a complete, real-world business plan in <strong style="color:#fff">exactly these 12 sections, in this order.</strong> Write at a level a 17-year-old can actually use — no jargon, no MBA-speak. Be encouraging but honest. If the idea has a fatal flaw, tell me.</p>
         <ol class="pm-deliv">
           <li><div><div class="deliv-title">Business Snapshot</div><div class="deliv-desc">One paragraph that explains the whole business like I'm pitching it to my uncle. Punchy. Real.</div></div></li>
           <li><div><div class="deliv-title">The Customer · Who Actually Pays You</div><div class="deliv-desc">A clear picture of the customer. Where do they hang out (in person and online)? What do they already spend money on? Why will they choose me?</div></div></li>
@@ -6759,60 +6683,9 @@
       </div>
 
       <!-- Hidden source text for the copy button -->
-      <textarea id="masterSrc" style="display:none;" readonly>You are an expert startup advisor and small business strategist. You've coached hundreds of young founders from idea to first revenue. You speak plainly, you ask sharp questions, and you don't sugarcoat.
+      <textarea id="masterSrc" style="display:none;" readonly>—— WHAT I NEED YOU TO BUILD ——
 
-I am 17 years old. I live in _______________ (your town/community). I'm building this business plan as part of a school project on financial literacy and entrepreneurship, but I want it to be real — something I could actually start.
-
-—— MY BUSINESS IDEA ——
-
-What the business does (one or two sentences):
-
-
-Why this idea? What made me think of it?
-
-
-Who is this FOR? (describe the customer — age, location, situation, what they're struggling with):
-
-
-What problem does it solve for them, or what feeling does it give them?
-
-
-—— WHAT I'M WORKING WITH ——
-
-Money I can start with (be honest — even $50 is fine): $_______________
-
-Hours per week I can actually commit to this: _______________ hours
-
-Skills I already have that will help (be specific — e.g., I'm good at TikTok, I can draw, I can fix things, I speak two languages):
-
-
-Things I'll need to learn (be honest):
-
-
-Tools/resources I have access to (phone, laptop, car, family who can help, etc.):
-
-
-—— WHAT I ALREADY KNOW ——
-
-Other businesses doing something similar (write "none that I know of" if you don't know):
-
-
-Why my version will be different or better:
-
-
-What I think I'll charge per customer / per sale: $_______________
-
-—— MY GOAL ——
-
-By 6 months from now, I want this business to:
-
-
-By 12 months from now, I want this business to:
-
-
-—— WHAT I NEED YOU TO BUILD ——
-
-Based on everything above, build me a complete, real-world business plan with the sections below. Use my exact info — don't make up generic stuff. If something I gave you is unclear, call it out and tell me what to think about.
+Based on the business idea I just described above, build me a complete, real-world business plan with the sections below. Use my exact info — don't make up generic stuff. If something I gave you is unclear, call it out and tell me what to think about.
 
 Write at a level a 17-year-old can actually use — no jargon without explaining it, no MBA-speak. Be encouraging but honest. If my idea has a fatal flaw, tell me. If a number I gave you is unrealistic, tell me and explain why.
 
