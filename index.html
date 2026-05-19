@@ -1581,6 +1581,64 @@
     .quad-cell { min-height: 280px; padding: 36px 28px; }
   }
 
+  /* ---------- PYRAMID (Identity at top · Environment at bottom) ---------- */
+  .pyramid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 24px 0 8px;
+  }
+  .pyramid-level {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 20px 26px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    transition: background 0.2s ease;
+  }
+  .pyramid-level:nth-child(1) { width: 64%; }
+  .pyramid-level:nth-child(2) { width: 73%; }
+  .pyramid-level:nth-child(3) { width: 82%; }
+  .pyramid-level:nth-child(4) { width: 91%; }
+  .pyramid-level:nth-child(5) { width: 100%; }
+  .pyramid-level.pyramid-top {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+  }
+  .pyl-n {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.4);
+    min-width: 28px;
+    padding-top: 3px;
+  }
+  .pyramid-level.pyramid-top .pyl-n { color: rgba(0, 0, 0, 0.4); }
+  .pyl-body { flex: 1; }
+  .pyl-name {
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+    color: #fff;
+  }
+  .pyramid-level.pyramid-top .pyl-name { color: #000; }
+  .pyl-desc {
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.55;
+  }
+  .pyramid-level.pyramid-top .pyl-desc { color: rgba(0, 0, 0, 0.78); }
+  @media (max-width: 760px) {
+    .pyramid-level:nth-child(n) { width: 100%; }
+    .pyramid-level { padding: 16px 18px; }
+  }
+
   /* ---------- TRIAD ---------- */
   .triad {
     display: grid;
@@ -4817,6 +4875,95 @@
       </div>
     </div>
 
+    <!-- ============ HOW CHANGE WORKS · PYRAMID ============ -->
+    <div style="margin-top: 80px;">
+      <h3 style="font-size: 22px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; font-weight: 800;">How Change Actually Works</h3>
+      <p class="text-muted" style="margin-bottom: 24px; max-width: 760px;">Every level shifts the one below it. Change <strong style="color:#fff">identity</strong> — and everything underneath rearranges itself to match. Try to fix things from the bottom up — change your environment, change one habit — and it slips back. <strong style="color:#fff">That's why future you isn't a goal. It's an identity.</strong></p>
+
+      <div class="pyramid">
+        <div class="pyramid-level pyramid-top">
+          <div class="pyl-n">01</div>
+          <div class="pyl-body">
+            <div class="pyl-name">Identity &amp; Purpose</div>
+            <div class="pyl-desc">Who you decide you are. The version of you you're committing to become. <strong>This is the lever.</strong></div>
+          </div>
+        </div>
+        <div class="pyramid-level">
+          <div class="pyl-n">02</div>
+          <div class="pyl-body">
+            <div class="pyl-name">Beliefs &amp; Values</div>
+            <div class="pyl-desc">What you actually believe is true about money, success, and what's possible for you.</div>
+          </div>
+        </div>
+        <div class="pyramid-level">
+          <div class="pyl-n">03</div>
+          <div class="pyl-body">
+            <div class="pyl-name">Capability</div>
+            <div class="pyl-desc">The skills you've built. What you actually know how to do.</div>
+          </div>
+        </div>
+        <div class="pyramid-level">
+          <div class="pyl-n">04</div>
+          <div class="pyl-body">
+            <div class="pyl-name">Behavior</div>
+            <div class="pyl-desc">The things you do every day — your habits, your patterns, your reps.</div>
+          </div>
+        </div>
+        <div class="pyramid-level">
+          <div class="pyl-n">05</div>
+          <div class="pyl-body">
+            <div class="pyl-name">Environment</div>
+            <div class="pyl-desc">Who's around you. Where you spend your time. What you let in.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="anchor mt-40">
+        <div class="anchor-label">The Shift</div>
+        <div class="anchor-text">
+          Most people try to change at the bottom — new app, new playlist, new gym. Two weeks later it slips. <strong>Wealthy people change at the top.</strong> They decide who they are. Then the habits, the skills, the people around them all start lining up to match.
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ THE TRIAD · STATE IN 10 SECONDS ============ -->
+    <h3 style="margin-top: 80px; font-size: 22px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; font-weight: 800;">The Triad · Shift Your State In 10 Seconds</h3>
+    <p class="text-muted" style="margin-bottom: 24px; max-width: 760px;">Identity is the long game. State is right now. How you feel is not random — <strong style="color:#fff">you control it.</strong> Three things make every emotion you've ever had. Change any one of them and the feeling changes in ten seconds. Try it.</p>
+
+    <div class="anchor">
+      <div class="anchor-label">Try This Right Now</div>
+      <div class="anchor-text">
+        Stand up. Slump your shoulders. Look down. Say out loud: <em>"I can't do this. I'm bad with money."</em> Feel that? Now — stand tall. Fists up. Look up. Say it loud: <em>"Let's go. I'm figuring this out."</em>
+        <br/><br/>
+        You just changed how you feel in ten seconds. You did that. To yourself.
+      </div>
+    </div>
+
+    <div class="triad">
+      <div class="triad-card">
+        <div class="n">01</div>
+        <div class="name">Body</div>
+        <div class="desc">How you stand, sit, breathe, move. Slumped vs. tall — defeated vs. unstoppable.</div>
+      </div>
+      <div class="triad-card">
+        <div class="n">02</div>
+        <div class="name">Focus</div>
+        <div class="desc">What you point your attention at. What's missing, or what's there. The problem, or the next move.</div>
+      </div>
+      <div class="triad-card">
+        <div class="n">03</div>
+        <div class="name">Language</div>
+        <div class="desc">The words you say to yourself. "I can't" vs. "I'm figuring it out." Same brain. Different result.</div>
+      </div>
+    </div>
+
+    <div class="anchor mt-60">
+      <div class="anchor-label">Now Tie It To Money</div>
+      <div class="anchor-text">
+        Your financial state works the same way. Stand there focused on what you don't have, slumped, telling yourself <em>"I'm bad with money"</em> — and guess what? You'll be right. Or you can stand up, focus on what you're building, and say <em>"I'm learning to be wealthy."</em> Same brain. Different result.
+      </div>
+    </div>
+
     <div class="section-nav" style="margin-top: 26px; padding-top: 22px;">
       <button onclick="showSection('act0')"><span class="nav-side">← Back<strong>Welcome</strong></span></button>
       <button class="next" onclick="showSection('act2')"><span class="nav-side">Next →<strong>02 · Where We Come From</strong></span></button>
@@ -5149,56 +5296,19 @@
       <div class="card"><div class="card-label">04</div><div class="card-title">Finances</div><p class="card-text">Money works for you. Bills don't keep you up at night.</p></div>
     </div>
 
-    <h3 style="margin-top: 80px; font-size: 22px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; font-weight: 800;">The Triad</h3>
-    <p class="text-muted" style="margin-bottom: 24px;">How you feel is not random. <strong style="color:#fff">You control it.</strong> Three things make every emotion you've ever had. Change any one of them and the feeling changes in ten seconds. Try it.</p>
-
-    <div class="anchor">
-      <div class="anchor-label">Try This Right Now</div>
-      <div class="anchor-text">
-        Stand up. Slump your shoulders. Look down. Say out loud: <em>"I can't do this. I'm bad with money."</em> Feel that? Now — stand tall. Fists up. Look up. Say it loud: <em>"Let's go. I'm figuring this out."</em>
-        <br/><br/>
-        You just changed how you feel in ten seconds. You did that. To yourself.
-      </div>
-    </div>
-
-    <div class="triad">
-      <div class="triad-card">
-        <div class="n">01</div>
-        <div class="name">Body</div>
-        <div class="desc">How you stand, sit, breathe, move. Slumped vs. tall — defeated vs. unstoppable.</div>
-      </div>
-      <div class="triad-card">
-        <div class="n">02</div>
-        <div class="name">Focus</div>
-        <div class="desc">What you point your attention at. What's missing, or what's there. The problem, or the next move.</div>
-      </div>
-      <div class="triad-card">
-        <div class="n">03</div>
-        <div class="name">Language</div>
-        <div class="desc">The words you say to yourself. "I can't" vs. "I'm figuring it out." Same brain. Different result.</div>
-      </div>
-    </div>
-
-    <div class="anchor mt-60">
-      <div class="anchor-label">Now Tie It To Money</div>
-      <div class="anchor-text">
-        Your financial state works the same way. Stand there focused on what you don't have, slumped, telling yourself <em>"I'm bad with money"</em> — and guess what? You'll be right. Or you can stand up, focus on what you're building, and say <em>"I'm learning to be wealthy."</em> Same brain. Different result.
-      </div>
-    </div>
-
     <h3 style="margin-top: 80px; font-size: 22px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 22px; font-weight: 800;">Two Sets Of Habits</h3>
     <p class="text-muted" style="margin-bottom: 24px;">Forget the person for a second. Look at the <strong style="color:#fff">habits.</strong> One set builds future you. The other set keeps you stuck. <strong style="color:#fff">Which list does your week actually look like right now?</strong> Type out loud — we'll build both columns together.</p>
 
     <div class="two-people">
       <div class="person-col wealthy">
         <h3>Wealthy Habits</h3>
-        <div class="seed">What future you does every day. Schedule. Thoughts about money. Friends. Decisions.</div>
-        <textarea placeholder="..." rows="2"></textarea>
-        <textarea placeholder="..." rows="2"></textarea>
-        <textarea placeholder="..." rows="2"></textarea>
-        <textarea placeholder="..." rows="2"></textarea>
-        <textarea placeholder="..." rows="2"></textarea>
-        <textarea placeholder="..." rows="2"></textarea>
+        <div class="seed">What future you does every day. A few to get you started — add your own.</div>
+        <textarea rows="2">Saves 10% off every paycheck — automatic, before anything else.</textarea>
+        <textarea rows="2">Asks Claude before they ask Google. Learns one new thing a day.</textarea>
+        <textarea rows="2">Reads or listens daily. Books, podcasts, people who think bigger.</textarea>
+        <textarea rows="2">Sleeps 7–8 hours. Real food. Moves their body.</textarea>
+        <textarea rows="2">Surrounds themselves with people building something.</textarea>
+        <textarea placeholder="Add your own..." rows="2"></textarea>
       </div>
       <div class="person-col broke">
         <h3>Non-Wealthy Habits</h3>
