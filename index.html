@@ -1833,6 +1833,226 @@
     .stat-feature { padding: 56px 24px; }
   }
 
+  /* ---------- ACT 4 · FULL-BLEED HERO ---------- */
+  .act4-hero {
+    position: relative;
+    margin: -90px -8vw 56px;
+    padding: 140px 8vw 90px;
+    overflow: hidden;
+    background:
+      linear-gradient(180deg, rgba(5,5,5,0.55) 0%, rgba(5,5,5,0.85) 70%, #050505 100%),
+      url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2400&q=80') center 40%/cover no-repeat;
+  }
+  .act4-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at top left, rgba(255,255,255,0.06), transparent 55%);
+    pointer-events: none;
+  }
+  .act4-hero-inner {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .act4-hero .section-eyebrow { color: rgba(255,255,255,0.78); }
+  .act4-hero .section-title {
+    font-size: clamp(48px, 8vw, 96px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    margin: 14px 0 28px;
+    color: #fff;
+    text-shadow: 0 2px 32px rgba(0,0,0,0.6);
+    font-weight: 800;
+  }
+  .act4-hero-sub {
+    font-size: clamp(18px, 1.5vw, 22px);
+    line-height: 1.6;
+    color: rgba(255,255,255,0.9);
+    max-width: 760px;
+    font-weight: 400;
+  }
+  .act4-hero-sub em { font-style: italic; color: #fff; }
+  @media (max-width: 760px) {
+    .act4-hero { padding: 100px 6vw 64px; margin: -80px -6vw 36px; }
+  }
+
+  /* ---------- DRAMATIC STATEMENT (editorial standfirst) ---------- */
+  .dramatic-statement {
+    margin: 56px 0 48px;
+    padding: 52px 56px 48px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+  }
+  .dramatic-statement-eyebrow {
+    font-size: 14px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    font-weight: 800;
+    margin-bottom: 22px;
+  }
+  .dramatic-statement-text {
+    font-size: clamp(32px, 4.8vw, 60px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: #fff;
+  }
+  .dramatic-statement-text em {
+    color: rgba(255,255,255,0.55);
+    font-style: italic;
+    font-weight: 600;
+  }
+  @media (max-width: 760px) {
+    .dramatic-statement { padding: 36px 24px; }
+  }
+
+  /* ---------- 4 WEALTH AREAS (big-numeral cards) ---------- */
+  .wealth-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin: 32px 0;
+  }
+  .wealth-card {
+    position: relative;
+    padding: 44px 40px 40px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    overflow: hidden;
+    min-height: 220px;
+  }
+  .wealth-card-num {
+    font-size: clamp(90px, 10vw, 150px);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: rgba(255,255,255,0.07);
+    position: absolute;
+    top: 16px;
+    right: 28px;
+    pointer-events: none;
+  }
+  .wealth-card-title {
+    font-size: clamp(28px, 2.8vw, 40px);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: #fff;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .wealth-card-desc {
+    font-size: clamp(17px, 1.4vw, 21px);
+    line-height: 1.55;
+    color: rgba(255,255,255,0.78);
+    position: relative;
+    z-index: 1;
+  }
+  @media (max-width: 760px) {
+    .wealth-grid { grid-template-columns: 1fr; }
+    .wealth-card { padding: 32px 26px; min-height: 0; }
+  }
+
+  /* ---------- HABITS GRID (classroom-readable rebuild) ---------- */
+  .habits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin: 32px 0;
+  }
+  .habits-col {
+    padding: 40px 36px 32px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+  .habits-col.wealthy {
+    background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  }
+  .habits-col.broke {
+    background: rgba(0,0,0,0.5);
+  }
+  .habits-col-label {
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 10px;
+  }
+  .habits-col-title {
+    font-size: clamp(26px, 2.6vw, 34px);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: #fff;
+    margin-bottom: 14px;
+  }
+  .habits-col-seed {
+    font-size: 16px;
+    color: rgba(255,255,255,0.6);
+    font-style: italic;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+  .habits-col textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.14);
+    padding: 18px 0;
+    font-family: inherit;
+    font-size: clamp(16px, 1.35vw, 19px);
+    color: #fff;
+    resize: vertical;
+    min-height: 32px;
+    line-height: 1.55;
+  }
+  .habits-col textarea:focus { outline: none; border-top-color: rgba(255,255,255,0.5); }
+  .habits-col textarea::placeholder { color: rgba(255,255,255,0.32); }
+  @media (max-width: 800px) {
+    .habits-grid { grid-template-columns: 1fr; }
+    .habits-col { padding: 30px 24px; }
+  }
+
+  /* ---------- MEGA QUOTE (huge editorial moment) ---------- */
+  .mega-quote {
+    margin: 72px 0 56px;
+    padding: 88px 64px 80px;
+    background: #fff;
+    color: #000;
+    border-radius: 16px;
+    text-align: center;
+    position: relative;
+  }
+  .mega-quote-eyebrow {
+    font-size: 14px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.55);
+    font-weight: 800;
+    margin-bottom: 28px;
+  }
+  .mega-quote-text {
+    font-size: clamp(36px, 5.4vw, 76px);
+    font-weight: 800;
+    letter-spacing: -0.028em;
+    line-height: 1.05;
+    color: #000;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .mega-quote-text em {
+    font-style: italic;
+    color: rgba(0,0,0,0.55);
+    font-weight: 700;
+  }
+  @media (max-width: 760px) {
+    .mega-quote { padding: 52px 28px; }
+  }
+
   /* ---------- YOU ARE HERE · UPWARD GRAPH (Act 2) ---------- */
   .you-are-here {
     margin: 36px 0 8px;
@@ -5748,15 +5968,19 @@
 
 <!-- ============ ACT 4 — STATE, IDENTITY & WEALTH ============ -->
 <div id="act4" class="section">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <div class="section-eyebrow"><span class="act-number">04</span>Act Four</div>
-        <div class="section-title">State, Identity &amp; Wealth</div>
-      </div>
-      <div class="timing">40 — 55 min</div>
-    </div>
 
+  <!-- Full-bleed hero header -->
+  <div class="act4-hero">
+    <div class="act4-hero-inner">
+      <div class="section-eyebrow"><span class="act-number">04</span>Act Four · 40–55 min</div>
+      <h1 class="section-title">State, Identity<br/>&amp; Wealth</h1>
+      <p class="act4-hero-sub">Money is one piece. <em>Not the whole thing.</em> Before we run any numbers, we have to widen what "wealthy" actually means.</p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- Traditional definition callout -->
     <div style="margin: 28px 0 32px; padding: 40px 44px 36px; background: rgba(255,255,255,0.04); border-left: 5px solid #fff; border-radius: 0 12px 12px 0; max-width: 1000px;">
       <div style="font-size: 15px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(255,255,255,0.7); font-weight: 800; margin-bottom: 18px;">Wealth · The Traditional Definition</div>
       <div style="font-size: clamp(28px, 3.4vw, 44px); color: #fff; font-style: italic; line-height: 1.25; font-weight: 500; letter-spacing: -0.005em;">"An abundance of money and valuable possessions."</div>
@@ -5764,40 +5988,73 @@
 
     <p style="font-size: clamp(20px, 1.8vw, 26px); color: rgba(255,255,255,0.85); max-width: 1000px; line-height: 1.55; margin-bottom: 36px; font-weight: 400;">That's the textbook answer. It's also why most people end up <strong style="color:#fff; font-weight:700;">rich in dollars and broke in every way that matters.</strong> Before we run any numbers, we have to widen the definition.</p>
 
-    <div class="anchor mt-40">
-      <div class="anchor-label">Real Wealth</div>
-      <div class="anchor-text">
-        Wealth is having freedom in four areas: your relationships, your time, your purpose, and yes — your finances. If you're rich in money but you hate your life, never see the people you love, and have no idea why you're here — <strong>you're not wealthy. You're just paid.</strong>
+    <!-- Dramatic statement -->
+    <div class="dramatic-statement">
+      <div class="dramatic-statement-eyebrow">The Real Definition</div>
+      <div class="dramatic-statement-text">Wealth is freedom <em>in four areas.</em><br/>Money is just one of them.</div>
+    </div>
+
+    <!-- 4 Wealth Areas · redesigned cards -->
+    <h3 style="margin-top: 80px; font-size: clamp(24px, 2.2vw, 30px); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; font-weight: 800;">What Wealth Actually Is</h3>
+    <p style="font-size: clamp(18px, 1.5vw, 21px); color: rgba(255,255,255,0.78); max-width: 900px; line-height: 1.55; margin-bottom: 36px;">Four areas. In your workbook, rank them in your own life right now — <strong style="color:#fff">1 (most free) to 4 (least free).</strong></p>
+
+    <div class="wealth-grid">
+      <div class="wealth-card">
+        <div class="wealth-card-num">01</div>
+        <div class="wealth-card-title">Relationships</div>
+        <div class="wealth-card-desc">Who you spend time with. Who you love. Who loves you back.</div>
+      </div>
+      <div class="wealth-card">
+        <div class="wealth-card-num">02</div>
+        <div class="wealth-card-title">Time</div>
+        <div class="wealth-card-desc">How you spend your hours. Whether you're rushed — or in control of your day.</div>
+      </div>
+      <div class="wealth-card">
+        <div class="wealth-card-num">03</div>
+        <div class="wealth-card-title">Purpose</div>
+        <div class="wealth-card-desc">Knowing why you're here. What you're meant to build. The fire underneath.</div>
+      </div>
+      <div class="wealth-card">
+        <div class="wealth-card-num">04</div>
+        <div class="wealth-card-title">Finances</div>
+        <div class="wealth-card-desc">Money works for you. Bills don't keep you up at night.</div>
       </div>
     </div>
 
-    <h3 style="margin-top: 60px; font-size: 22px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 22px; font-weight: 800;">What Wealth Actually Is</h3>
-    <p class="text-muted" style="margin-bottom: 24px;">Four areas. In your workbook, rank them in your own life right now — 1 (most free) to 4 (least free).</p>
-
-    <div class="grid grid-4">
-      <div class="card"><div class="card-label">01</div><div class="card-title">Relationships</div><p class="card-text">Who you spend time with. Who you love. Who loves you back.</p></div>
-      <div class="card"><div class="card-label">02</div><div class="card-title">Time</div><p class="card-text">How you spend your hours. Whether you're rushed or not.</p></div>
-      <div class="card"><div class="card-label">03</div><div class="card-title">Purpose</div><p class="card-text">Knowing why you're here. What you're meant to build.</p></div>
-      <div class="card"><div class="card-label">04</div><div class="card-title">Finances</div><p class="card-text">Money works for you. Bills don't keep you up at night.</p></div>
+    <!-- Anchor: rich in money but broke in life -->
+    <div class="anchor mt-60">
+      <div class="anchor-label">The Trap</div>
+      <div class="anchor-text" style="font-size: clamp(18px, 1.55vw, 22px); line-height: 1.55;">
+        If you're rich in money but you hate your life, never see the people you love, and have no idea why you're here — <strong>you're not wealthy. You're just paid.</strong>
+      </div>
     </div>
 
-    <h3 style="margin-top: 80px; font-size: 22px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 22px; font-weight: 800;">Two Sets Of Habits</h3>
-    <p class="text-muted" style="margin-bottom: 24px;">Forget the person for a second. Look at the <strong style="color:#fff">habits.</strong> One set builds future you. The other set keeps you stuck. <strong style="color:#fff">Which list does your week actually look like right now?</strong> Type out loud — we'll build both columns together.</p>
+    <!-- Two Sets of Habits · upgraded -->
+    <h3 style="margin-top: 96px; font-size: clamp(24px, 2.2vw, 30px); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; font-weight: 800;">Two Sets Of Habits</h3>
+    <p style="font-size: clamp(18px, 1.5vw, 21px); color: rgba(255,255,255,0.78); max-width: 900px; line-height: 1.55; margin-bottom: 32px;">Forget the person for a second. Look at the <strong style="color:#fff">habits.</strong> One set builds future you. The other keeps you stuck. <strong style="color:#fff">Which list does your week actually look like?</strong></p>
 
-    <div class="two-people">
-      <div class="person-col wealthy">
-        <h3>Wealthy Habits</h3>
-        <div class="seed">What future you does every day. A few to get you started — add your own.</div>
-        <textarea rows="2">Saves 10% off every paycheck — automatic, before anything else.</textarea>
-        <textarea rows="2">Asks Claude before they ask Google. Learns one new thing a day.</textarea>
-        <textarea rows="2">Reads or listens daily. Books, podcasts, people who think bigger.</textarea>
-        <textarea rows="2">Sleeps 7–8 hours. Real food. Moves their body.</textarea>
-        <textarea rows="2">Surrounds themselves with people building something.</textarea>
+    <div class="habits-grid">
+      <div class="habits-col wealthy">
+        <div class="habits-col-label">The Set That Builds Future You</div>
+        <div class="habits-col-title">Wealthy Habits</div>
+        <div class="habits-col-seed">Mike's list — add your own at the bottom.</div>
+        <textarea rows="2">Sleeps 7–8 hours every night.</textarea>
+        <textarea rows="2">Eats real food. Drinks water.</textarea>
+        <textarea rows="2">Moves their body every day.</textarea>
+        <textarea rows="2">Reads. Listens. Learns daily.</textarea>
+        <textarea rows="2">Pays themselves first — 10% off every dollar.</textarea>
+        <textarea rows="2">Surrounds themselves with people who push them.</textarea>
+        <textarea rows="2">Tracks where their money actually goes.</textarea>
+        <textarea rows="2">Takes care of their mental health.</textarea>
         <textarea placeholder="Add your own..." rows="2"></textarea>
       </div>
-      <div class="person-col broke">
-        <h3>Non-Wealthy Habits</h3>
-        <div class="seed">What keeps people stuck. Schedule. Thoughts about money. Friends. Decisions.</div>
+      <div class="habits-col broke">
+        <div class="habits-col-label">The Set That Keeps You Stuck</div>
+        <div class="habits-col-title">Non-Wealthy Habits</div>
+        <div class="habits-col-seed">What does that look like in a typical week? Schedule. Thoughts about money. Friends. Decisions.</div>
+        <textarea placeholder="..." rows="2"></textarea>
+        <textarea placeholder="..." rows="2"></textarea>
+        <textarea placeholder="..." rows="2"></textarea>
         <textarea placeholder="..." rows="2"></textarea>
         <textarea placeholder="..." rows="2"></textarea>
         <textarea placeholder="..." rows="2"></textarea>
@@ -5807,19 +6064,21 @@
       </div>
     </div>
 
-    <div class="pull-quote mt-60" style="padding-bottom: 20px;">
-      You don't get what you want. You get what you're identified with.
+    <!-- MEGA quote · Truth #3 -->
+    <div class="mega-quote">
+      <div class="mega-quote-eyebrow">Truth Number Three</div>
+      <div class="mega-quote-text">"You don't get what you want. <em>You get what you're identified with.</em>"</div>
     </div>
-    <div class="pull-quote-cap">Truth Number Three</div>
 
+    <!-- Closing real question -->
     <div class="anchor mt-40">
       <div class="anchor-label">The Real Question</div>
-      <div class="anchor-text">
+      <div class="anchor-text" style="font-size: clamp(18px, 1.55vw, 22px); line-height: 1.55;">
         Forget "Do you want to be wealthy?" — everyone wants that. The real question is: <strong>are you willing to become future you?</strong> Same body. Same town. Different habits. Different identity. Different life.
       </div>
     </div>
 
-    <div class="section-nav">
+    <div class="section-nav" style="margin-top: 40px;">
       <button onclick="showSection('act3')"><span class="nav-side">← Back<strong>03 · Four Paths</strong></span></button>
       <button class="next" onclick="showSection('act5')"><span class="nav-side">Next →<strong>05 · Math Of Freedom</strong></span></button>
     </div>
