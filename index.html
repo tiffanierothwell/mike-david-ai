@@ -521,28 +521,15 @@
     min-height: calc(100vh - 124px);
   }
 
-  /* ---------- ACT 3 · QUADRANT FIRST-FOLD ---------- */
+  /* ---------- ACT 3 · QUADRANT WRAPPER ---------- */
   .act3-firstfold {
-    display: flex;
-    flex-direction: column;
-    min-height: calc(100vh - 124px);
     margin-bottom: 80px;
   }
   .act3-firstfold .quadrant {
-    flex: 1;
     margin: 0;
-    min-height: 0;
   }
   .act3-firstfold .quad-cell {
-    min-height: 0;
     padding: 36px 28px 28px;
-  }
-  @media (max-height: 760px) {
-    .act3-firstfold .quad-cell { padding: 22px 22px 18px; }
-    .act3-firstfold .quad-letter { font-size: clamp(56px, 7vw, 96px); margin-bottom: 8px; }
-    .act3-firstfold .quad-name { margin-bottom: 8px; font-size: 15px; }
-    .act3-firstfold .quad-tag { margin-bottom: 16px; }
-    .act3-firstfold .quad-flow { margin-bottom: 14px; }
   }
 
   .act1-head, .act2-head, .act3-head, .act6-head, .act7-head, .act8-head {
