@@ -1582,61 +1582,46 @@
   }
 
   /* ---------- PYRAMID (Identity at top · Environment at bottom) ---------- */
-  .pyramid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin: 24px 0 8px;
+  .pyramid-figure {
+    margin: 36px auto 8px;
+    max-width: 720px;
   }
-  .pyramid-level {
-    display: flex;
-    align-items: flex-start;
-    gap: 18px;
-    padding: 20px 26px;
-    background: rgba(255, 255, 255, 0.03);
+  .pyramid-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  .pyramid-descriptions {
+    margin-top: 28px;
+    display: grid;
+    gap: 12px;
+    padding: 24px 26px;
+    background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
-    transition: background 0.2s ease;
+    border-radius: 10px;
   }
-  .pyramid-level:nth-child(1) { width: 64%; }
-  .pyramid-level:nth-child(2) { width: 73%; }
-  .pyramid-level:nth-child(3) { width: 82%; }
-  .pyramid-level:nth-child(4) { width: 91%; }
-  .pyramid-level:nth-child(5) { width: 100%; }
-  .pyramid-level.pyramid-top {
-    background: #fff;
-    color: #000;
-    border-color: #fff;
-  }
-  .pyl-n {
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    color: rgba(255, 255, 255, 0.4);
-    min-width: 28px;
-    padding-top: 3px;
-  }
-  .pyramid-level.pyramid-top .pyl-n { color: rgba(0, 0, 0, 0.4); }
-  .pyl-body { flex: 1; }
-  .pyl-name {
-    font-size: 16px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 6px;
-    color: #fff;
-  }
-  .pyramid-level.pyramid-top .pyl-name { color: #000; }
-  .pyl-desc {
+  .pd-item {
     font-size: 14.5px;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.72);
     line-height: 1.55;
   }
-  .pyramid-level.pyramid-top .pyl-desc { color: rgba(0, 0, 0, 0.78); }
+  .pd-item strong {
+    color: #fff;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 12.5px;
+    margin-right: 4px;
+  }
+  .pd-item em {
+    font-style: normal;
+    color: #fff;
+    font-weight: 700;
+  }
   @media (max-width: 760px) {
-    .pyramid-level:nth-child(n) { width: 100%; }
-    .pyramid-level { padding: 16px 18px; }
+    .pyramid-figure { margin: 24px auto 8px; }
+    .pyramid-descriptions { padding: 18px 16px; }
   }
 
   /* ---------- TRIAD ---------- */
@@ -4880,41 +4865,40 @@
       <h3 style="font-size: 22px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; font-weight: 800;">How Change Actually Works</h3>
       <p class="text-muted" style="margin-bottom: 24px; max-width: 760px;">Every level shifts the one below it. Change <strong style="color:#fff">identity</strong> — and everything underneath rearranges itself to match. Try to fix things from the bottom up — change your environment, change one habit — and it slips back. <strong style="color:#fff">That's why future you isn't a goal. It's an identity.</strong></p>
 
-      <div class="pyramid">
-        <div class="pyramid-level pyramid-top">
-          <div class="pyl-n">01</div>
-          <div class="pyl-body">
-            <div class="pyl-name">Identity &amp; Purpose</div>
-            <div class="pyl-desc">Who you decide you are. The version of you you're committing to become. <strong>This is the lever.</strong></div>
-          </div>
-        </div>
-        <div class="pyramid-level">
-          <div class="pyl-n">02</div>
-          <div class="pyl-body">
-            <div class="pyl-name">Beliefs &amp; Values</div>
-            <div class="pyl-desc">What you actually believe is true about money, success, and what's possible for you.</div>
-          </div>
-        </div>
-        <div class="pyramid-level">
-          <div class="pyl-n">03</div>
-          <div class="pyl-body">
-            <div class="pyl-name">Capability</div>
-            <div class="pyl-desc">The skills you've built. What you actually know how to do.</div>
-          </div>
-        </div>
-        <div class="pyramid-level">
-          <div class="pyl-n">04</div>
-          <div class="pyl-body">
-            <div class="pyl-name">Behavior</div>
-            <div class="pyl-desc">The things you do every day — your habits, your patterns, your reps.</div>
-          </div>
-        </div>
-        <div class="pyramid-level">
-          <div class="pyl-n">05</div>
-          <div class="pyl-body">
-            <div class="pyl-name">Environment</div>
-            <div class="pyl-desc">Who's around you. Where you spend your time. What you let in.</div>
-          </div>
+      <div class="pyramid-figure">
+        <svg viewBox="0 0 600 480" class="pyramid-svg" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-label="The 5-level change pyramid">
+          <!-- Level 1 (top) · Identity · white -->
+          <polygon points="240,40 360,40 384,120 216,120" fill="#fff"/>
+          <text x="300" y="78" text-anchor="middle" font-size="11" font-weight="800" fill="rgba(0,0,0,0.45)" letter-spacing="2.5">01</text>
+          <text x="300" y="100" text-anchor="middle" font-size="15" font-weight="800" fill="#000" letter-spacing="1.5">IDENTITY</text>
+
+          <!-- Level 2 · Beliefs -->
+          <polygon points="216,120 384,120 408,200 192,200" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+          <text x="300" y="158" text-anchor="middle" font-size="11" font-weight="800" fill="rgba(255,255,255,0.45)" letter-spacing="2.5">02</text>
+          <text x="300" y="180" text-anchor="middle" font-size="14" font-weight="800" fill="#fff" letter-spacing="1.5">BELIEFS</text>
+
+          <!-- Level 3 · Capability -->
+          <polygon points="192,200 408,200 432,280 168,280" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+          <text x="300" y="238" text-anchor="middle" font-size="11" font-weight="800" fill="rgba(255,255,255,0.45)" letter-spacing="2.5">03</text>
+          <text x="300" y="260" text-anchor="middle" font-size="14" font-weight="800" fill="#fff" letter-spacing="1.5">CAPABILITY</text>
+
+          <!-- Level 4 · Behavior -->
+          <polygon points="168,280 432,280 456,360 144,360" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+          <text x="300" y="318" text-anchor="middle" font-size="11" font-weight="800" fill="rgba(255,255,255,0.45)" letter-spacing="2.5">04</text>
+          <text x="300" y="340" text-anchor="middle" font-size="14" font-weight="800" fill="#fff" letter-spacing="1.5">BEHAVIOR</text>
+
+          <!-- Level 5 (bottom, widest) · Environment -->
+          <polygon points="144,360 456,360 480,440 120,440" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+          <text x="300" y="398" text-anchor="middle" font-size="11" font-weight="800" fill="rgba(255,255,255,0.45)" letter-spacing="2.5">05</text>
+          <text x="300" y="420" text-anchor="middle" font-size="14" font-weight="800" fill="#fff" letter-spacing="1.5">ENVIRONMENT</text>
+        </svg>
+
+        <div class="pyramid-descriptions">
+          <div class="pd-item"><strong>01 · Identity &amp; Purpose</strong> — Who you decide you are. The version of you you're committing to become. <em>This is the lever.</em></div>
+          <div class="pd-item"><strong>02 · Beliefs &amp; Values</strong> — What you actually believe is true about money, success, and what's possible for you.</div>
+          <div class="pd-item"><strong>03 · Capability</strong> — The skills you've built. What you actually know how to do.</div>
+          <div class="pd-item"><strong>04 · Behavior</strong> — The things you do every day. Your habits, your patterns, your reps.</div>
+          <div class="pd-item"><strong>05 · Environment</strong> — Who's around you. Where you spend your time. What you let in.</div>
         </div>
       </div>
 
