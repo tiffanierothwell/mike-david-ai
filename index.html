@@ -5201,6 +5201,241 @@
     .card-rec { flex-direction: column; text-align: center; }
   }
 
+  /* ============================================================
+     DYNAMIC ENHANCEMENTS · hovers, transitions, reveals
+     (no changes to text, layout, colors, or fonts — motion only)
+     ============================================================ */
+  @media (prefers-reduced-motion: no-preference) {
+
+    /* --- Section transitions when switching Acts --- */
+    .section.active {
+      animation: actEnter .55s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes actEnter {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- Stagger child reveal inside each active section --- */
+    .section.active > .container > * {
+      animation: rowReveal .65s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .section.active > .container > *:nth-child(1) { animation-delay: 0.02s; }
+    .section.active > .container > *:nth-child(2) { animation-delay: 0.08s; }
+    .section.active > .container > *:nth-child(3) { animation-delay: 0.14s; }
+    .section.active > .container > *:nth-child(4) { animation-delay: 0.20s; }
+    .section.active > .container > *:nth-child(5) { animation-delay: 0.26s; }
+    .section.active > .container > *:nth-child(6) { animation-delay: 0.32s; }
+    .section.active > .container > *:nth-child(7) { animation-delay: 0.38s; }
+    .section.active > .container > *:nth-child(8) { animation-delay: 0.44s; }
+    @keyframes rowReveal {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- Nav tabs · subtle lift + underline pulse on hover --- */
+    .tab {
+      transition: color .22s, background .22s, transform .22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .tab:hover:not(.active) { transform: translateY(-1px); }
+
+    /* --- Brand logo · gentle rotate on hover --- */
+    .brand-mark img {
+      transition: transform .55s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .brand:hover .brand-mark img { transform: rotate(-10deg) scale(1.06); }
+
+    /* --- Cards · lift + shadow on hover --- */
+    .card {
+      transition:
+        transform .32s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color .25s,
+        background .25s,
+        box-shadow .32s;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.4);
+    }
+
+    /* --- Primary buttons · springy lift --- */
+    .btn { transition: transform .25s cubic-bezier(0.16, 1, 0.3, 1), background .2s, box-shadow .25s; }
+    .btn:hover:not(:disabled) { transform: translateY(-3px) scale(1.015); box-shadow: 0 12px 28px rgba(0,0,0,0.35); }
+
+    /* --- Big number reveal on section activation --- */
+    .section.active .big-number .num {
+      animation: numReveal 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    @keyframes numReveal {
+      from { opacity: 0; transform: scale(.94); letter-spacing: -0.08em; }
+      to   { opacity: 1; transform: scale(1);   letter-spacing: -0.04em; }
+    }
+    .section.active .now-hero-num,
+    .section.active .cc-total-num,
+    .section.active .calc-result .total {
+      animation: numSoftReveal .9s cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: .15s;
+    }
+    @keyframes numSoftReveal {
+      from { opacity: 0; transform: translateY(8px) scale(.97); }
+      to   { opacity: 1; transform: translateY(0)  scale(1); }
+    }
+
+    /* --- Quadrant cells · subtle pop on hover --- */
+    .quad-cell {
+      transition: background .25s, transform .3s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+    .quad-cell:hover {
+      transform: translateZ(0) scale(1.008);
+      z-index: 2;
+    }
+    .quad-cell .qf-icon, .quad-cell .qf-arrow {
+      transition: transform .35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .quad-cell:hover .qf-icon { transform: scale(1.08); }
+    .quad-cell:hover .qf-arrow { transform: translateX(3px); }
+
+    /* --- Anchor block · left border ink-draw on entry --- */
+    .anchor {
+      position: relative;
+      overflow: hidden;
+    }
+    .anchor::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: #fff;
+      transform: translateY(-100%);
+      transition: transform .9s cubic-bezier(0.16, 1, 0.3, 1) .15s;
+    }
+    .section.active .anchor::after { transform: translateY(0); }
+
+    /* --- 3D folders · enhanced lift + paper slide --- */
+    .prompt-folder {
+      transition: transform .35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .fol-papers {
+      transition: transform .35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .prompt-folder:hover .fol-papers { transform: translateY(-3px); }
+
+    /* --- Mini folder rows (Act 7 take-home) --- */
+    .mini-folder {
+      transition: all .25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .mini-folder .mf-svg {
+      transition: transform .35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .mini-folder:hover .mf-svg { transform: rotate(-4deg) scale(1.1); }
+    .mini-folder:hover .mf-arrow { transform: translateX(3px); }
+    .mf-arrow { transition: transform .25s cubic-bezier(0.16, 1, 0.3, 1); }
+
+    /* --- Workbook download card · animated arrow + pulse --- */
+    .wb-arrow .ico svg {
+      transition: transform .35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .workbook-dl:hover .wb-arrow .ico svg {
+      animation: arrowBob 1.2s ease-in-out infinite;
+    }
+    @keyframes arrowBob {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(3px); }
+    }
+
+    /* --- Pull quotes · slight fade-up when revealed --- */
+    .section.active .pull-quote,
+    .section.active .a8-pull {
+      animation: pullReveal .85s cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: .25s;
+    }
+    @keyframes pullReveal {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- Pivot mark · gentle breathing pulse --- */
+    .pivot-mark {
+      transition: transform .35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .section.active .pivot-mark {
+      animation: pivotBreath 3.6s ease-in-out infinite;
+    }
+    @keyframes pivotBreath {
+      0%, 100% { transform: scale(1); }
+      50%      { transform: scale(1.04); }
+    }
+
+    /* --- Hero CTAs · arrow nudge on hover --- */
+    .nav-side strong { transition: transform .25s; }
+    .section-nav button:hover .nav-side strong { transform: translateX(3px); }
+    .section-nav button:hover .nav-side strong[style*="text-align"] { transform: translateX(-3px); }
+
+    /* --- Sorter chips · bouncy state changes --- */
+    .item-chip {
+      transition: all .22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .item-chip:hover { transform: translateY(-1px); }
+    .item-chip.asset {
+      animation: chipFlip .35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .item-chip.liability {
+      animation: chipFlip .35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes chipFlip {
+      0%   { transform: scale(.92); }
+      60%  { transform: scale(1.04); }
+      100% { transform: scale(1); }
+    }
+
+    /* --- Calculator sliders · highlight on focus --- */
+    .calc-input input[type=range] {
+      transition: background .2s;
+    }
+    .calc-input:hover input[type=range] { background: rgba(255,255,255,0.28); }
+
+    /* --- Section nav buttons · slide arrows --- */
+    .section-nav button {
+      transition: opacity .25s, transform .25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .section-nav button:hover { transform: translateY(-2px); }
+
+    /* --- Folder modal CTAs --- */
+    .pm-copy { transition: transform .25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .3s; }
+    .pm-copy:hover { transform: translateY(-2px); }
+    .pm-copy .arrow { transition: transform .25s; }
+    .pm-copy:hover .arrow { transform: translateX(4px); }
+
+    /* --- Status / live dots already pulse via @keyframes elsewhere — keep --- */
+
+    /* --- Scroll-triggered reveal helper (opt-in via .reveal-in) --- */
+    .reveal-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .8s cubic-bezier(0.16, 1, 0.3, 1), transform .8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-in.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* --- Reduced motion · honour the preference --- */
+  @media (prefers-reduced-motion: reduce) {
+    .section.active,
+    .section.active > .container > *,
+    .section.active .big-number .num,
+    .section.active .anchor::after,
+    .section.active .pivot-mark,
+    .section.active .pull-quote,
+    .section.active .a8-pull,
+    .item-chip,
+    .workbook-dl:hover .wb-arrow .ico svg {
+      animation: none !important;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -7876,37 +8111,107 @@ Start now with Level 1, question 1.</textarea>
 
 
 <script>
-  /* ---------- TAB / SECTION NAVIGATION ---------- */
+  /* ---------- TAB / SECTION NAVIGATION + URL ROUTING ---------- */
   const tabs = document.querySelectorAll('.tab');
   const sections = document.querySelectorAll('.section');
   const order = ['act0','act1','act2','act3','act4','act5','act6','act7','act8'];
 
+  /* Map section IDs to URL-friendly slugs based on tab labels.
+     act0 has no slug → keeps the root URL clean for the welcome page. */
+  const SLUGS = {
+    act0: '',
+    act1: 'identity',
+    act2: 'where-we-are-going',
+    act3: 'four-paths',
+    act4: 'state-and-wealth',
+    act5: 'math-of-freedom',
+    act6: 'tools',
+    act7: 'ai',
+    act8: 'commit-today'
+  };
+  const REVERSE_SLUGS = Object.fromEntries(
+    Object.entries(SLUGS).map(([k, v]) => [v, k])
+  );
+
   const SECTION_KEY = 'mike_active_section';
+
+  function updateUrl(id, replace) {
+    const slug = SLUGS[id];
+    const newHash = slug ? '#' + slug : '';
+    const target = location.pathname + location.search + newHash;
+    if (location.pathname + location.search + location.hash === target) return;
+    if (replace) {
+      history.replaceState({ id }, '', target);
+    } else {
+      history.pushState({ id }, '', target);
+    }
+  }
+
   function showSection(id, opts = {}) {
+    if (!document.getElementById(id)) return;
     sections.forEach(s => s.classList.toggle('active', s.id === id));
     tabs.forEach(t => t.classList.toggle('active', t.dataset.target === id));
     if (!opts.skipScroll) window.scrollTo({ top: 0, behavior: 'instant' });
     try { localStorage.setItem(SECTION_KEY, id); } catch (e) {}
+    if (!opts.skipUrl) updateUrl(id, !!opts.replaceUrl);
   }
   tabs.forEach(t => t.addEventListener('click', () => showSection(t.dataset.target)));
 
-  /* Restore the last-viewed Act on page load (refresh-safe) */
-  try {
-    const saved = localStorage.getItem(SECTION_KEY);
-    if (saved && document.getElementById(saved)) {
-      showSection(saved, { skipScroll: true });
+  /* Initial route resolution · priority: URL hash > localStorage > act0 */
+  (function resolveInitialSection() {
+    const hash = (location.hash || '').replace(/^#/, '').toLowerCase();
+    const fromHash = REVERSE_SLUGS[hash];
+    if (fromHash) {
+      showSection(fromHash, { skipScroll: true, replaceUrl: true });
+      return;
     }
-  } catch (e) {}
+    try {
+      const saved = localStorage.getItem(SECTION_KEY);
+      if (saved && document.getElementById(saved) && saved !== 'act0') {
+        showSection(saved, { skipScroll: true, replaceUrl: true });
+        return;
+      }
+    } catch (e) {}
+    /* default · stay on act0 and clean the URL if it had an unknown hash */
+    if (hash) history.replaceState(null, '', location.pathname + location.search);
+  })();
+
+  /* Back / forward / pasted-link · respond to hash changes */
+  window.addEventListener('popstate', () => {
+    const hash = (location.hash || '').replace(/^#/, '').toLowerCase();
+    const target = REVERSE_SLUGS[hash] || 'act0';
+    showSection(target, { skipUrl: true });
+  });
+  window.addEventListener('hashchange', () => {
+    const hash = (location.hash || '').replace(/^#/, '').toLowerCase();
+    const target = REVERSE_SLUGS[hash] || 'act0';
+    const current = document.querySelector('.section.active');
+    if (!current || current.id !== target) showSection(target, { skipUrl: true });
+  });
 
   /* keyboard nav */
   document.addEventListener('keydown', (e) => {
     if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT') return;
-    const active = document.querySelector('.section.active').id;
-    const i = order.indexOf(active);
+    const activeEl = document.querySelector('.section.active');
+    if (!activeEl) return;
+    const i = order.indexOf(activeEl.id);
     if (e.key === 'ArrowRight' && i < order.length - 1) showSection(order[i+1]);
     if (e.key === 'ArrowLeft'  && i > 0) showSection(order[i-1]);
     if (/^[0-8]$/.test(e.key)) showSection('act' + e.key);
   });
+
+  /* ---------- IntersectionObserver · reveal-in elements as they scroll into view ---------- */
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal-in').forEach(el => io.observe(el));
+  }
 
   /* ---------- LIVE CLOCK ---------- */
   function tickClock() {
