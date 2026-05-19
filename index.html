@@ -1581,6 +1581,169 @@
     .quad-cell { min-height: 280px; padding: 36px 28px; }
   }
 
+  /* ---------- YOU ARE HERE · UPWARD GRAPH (Act 2) ---------- */
+  .you-are-here {
+    margin: 36px 0 8px;
+    padding: 32px 32px 28px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    text-align: center;
+  }
+  .yah-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 7px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  .yah-svg-wrap { margin: 8px 0 22px; }
+  .yah-svg {
+    width: 100%;
+    max-width: 820px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  .yah-cap {
+    font-size: 15.5px;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.6;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .yah-cap strong { color: #fff; font-weight: 700; }
+
+  /* ---------- INDIGENOMICS QUOTE CARDS ---------- */
+  .quotes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 18px;
+    margin: 24px 0 8px;
+  }
+  .quote-card {
+    padding: 28px 28px 22px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin: 0;
+    position: relative;
+  }
+  .quote-card::before {
+    content: '\201C';
+    position: absolute;
+    top: 4px;
+    left: 18px;
+    font-size: 64px;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.18);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+  }
+  .quote-card p {
+    font-size: 16px;
+    line-height: 1.55;
+    color: #fff;
+    font-weight: 500;
+    margin: 24px 0 14px;
+    padding-left: 18px;
+    font-style: italic;
+  }
+  .quote-card p em {
+    font-style: italic;
+    font-weight: 700;
+    color: #fff;
+  }
+  .quote-card cite {
+    display: block;
+    font-size: 11px;
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding-left: 18px;
+    font-weight: 700;
+  }
+
+  /* ---------- BIG PULL QUOTE ---------- */
+  .big-quote {
+    margin: 48px 0;
+    padding: 40px 44px 34px;
+    background: rgba(255, 255, 255, 0.04);
+    border-left: 3px solid #fff;
+    border-radius: 0 12px 12px 0;
+  }
+  .big-quote p {
+    font-size: 22px;
+    line-height: 1.45;
+    font-weight: 400;
+    color: #fff;
+    font-style: italic;
+    margin: 0 0 18px;
+  }
+  .big-quote p strong {
+    font-style: normal;
+    font-weight: 700;
+  }
+  .big-quote cite {
+    font-size: 12px;
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .big-quote-final {
+    background: #fff;
+    color: #000;
+    border-left-color: #000;
+  }
+  .big-quote-final p { color: #000; }
+  .big-quote-final cite { color: rgba(0, 0, 0, 0.55); }
+
+  /* ---------- ANCHOR QUOTE (single, centered) ---------- */
+  .anchor-quote {
+    margin: 36px auto;
+    max-width: 760px;
+    text-align: center;
+    padding: 28px 24px 22px;
+  }
+  .anchor-quote p {
+    font-size: 26px;
+    font-weight: 500;
+    font-style: italic;
+    line-height: 1.35;
+    color: #fff;
+    margin: 0 0 14px;
+  }
+  .anchor-quote p em {
+    font-style: italic;
+    font-weight: 700;
+    color: #fff;
+  }
+  .anchor-quote cite {
+    font-size: 11px;
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  @media (max-width: 760px) {
+    .you-are-here { padding: 22px 16px; }
+    .quotes-grid { grid-template-columns: 1fr; gap: 14px; }
+    .quote-card { padding: 22px 20px 18px; }
+    .big-quote { padding: 28px 24px 22px; }
+    .big-quote p { font-size: 18px; }
+    .anchor-quote p { font-size: 20px; }
+  }
+
   /* ---------- PYRAMID (Identity at top · Environment at bottom) ---------- */
   .pyramid-figure {
     margin: 36px auto 8px;
@@ -4956,7 +5119,7 @@
 </div>
 
 
-<!-- ============ ACT 2 — WHERE WE COME FROM ============ -->
+<!-- ============ ACT 2 — WHERE WE ARE GOING ============ -->
 <div id="act2" class="section act2-stage">
   <div class="container">
 
@@ -4964,88 +5127,122 @@
     <div class="act2-head">
       <div>
         <div class="section-eyebrow"><span class="act-number">02</span>Act Two · 15–25 min</div>
-        <div class="section-title">Where We Come From</div>
+        <div class="section-title">Where We Are Going</div>
       </div>
-      <p class="act2-intro">Before we talk about building wealth, we talk about why our communities haven't. <strong>Not because we didn't want it. Because the rules were built to stop it.</strong></p>
+      <p class="act2-intro">We're not here to dwell on what was. <strong>We're creating a brighter future.</strong> The Indigenous economy is upward trending — and the curve is steepening. The question isn't whether the opportunity exists. It's whether you've got <em>the mindset and the skills</em> to position yourself in it.</p>
     </div>
 
-    <!-- THEN · NOW split -->
-    <div class="act2-split">
+    <!-- ============ YOU ARE HERE · UPWARD GRAPH ============ -->
+    <div class="you-are-here">
+      <div class="yah-label">You Are Here</div>
+      <div class="yah-svg-wrap">
+        <svg viewBox="0 0 820 320" class="yah-svg" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-label="The upward curve of the Indigenous economy">
+          <!-- Faint grid axis -->
+          <line x1="40" y1="282" x2="800" y2="282" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+          <line x1="40" y1="40" x2="40" y2="282" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
 
-      <!-- LEFT · THEN -->
-      <div class="act2-side act2-then">
-        <div class="side-meta">
-          <span class="side-tag">Then</span>
-          <span class="side-sub">The Architecture · Not The Victim Story</span>
-        </div>
-        <h3 class="side-title">The Rules<br/>Were Stacked.</h3>
+          <!-- Upward curve -->
+          <path d="M40,278 C170,272 260,260 350,232 C450,200 540,150 620,90 C680,46 740,24 780,16"
+                fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
 
-        <div class="then-rules">
-          <div class="rule-row">
-            <div class="rule-num">01</div>
-            <div class="rule-body">
-              <div class="rule-title">Status Land</div>
-              <p>Couldn't be mortgaged. Grandma rented while her cousin off-reserve owned.</p>
-            </div>
-          </div>
-          <div class="rule-row">
-            <div class="rule-num">02</div>
-            <div class="rule-body">
-              <div class="rule-title">Banking Blocked</div>
-              <p>No mortgages. No business loans. No way to compound wealth for generations.</p>
-            </div>
-          </div>
-          <div class="rule-row">
-            <div class="rule-num">03</div>
-            <div class="rule-body">
-              <div class="rule-title">Permission Gated</div>
-              <p>The Indian Agent decided if you could open a store on your own land.</p>
-            </div>
-          </div>
-        </div>
+          <!-- Soft glow under the curve -->
+          <path d="M40,278 C170,272 260,260 350,232 C450,200 540,150 620,90 C680,46 740,24 780,16 L780,282 L40,282 Z"
+                fill="url(#yahGradient)" opacity="0.4"/>
+          <defs>
+            <linearGradient id="yahGradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="rgba(255,255,255,0.2)"/>
+              <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+            </linearGradient>
+          </defs>
 
-        <div class="side-quote then-quote">"Same hard work. Different rules."</div>
+          <!-- NOW marker -->
+          <circle cx="350" cy="232" r="16" fill="rgba(255,255,255,0.15)"/>
+          <circle cx="350" cy="232" r="6" fill="#fff"/>
+          <line x1="350" y1="238" x2="350" y2="282" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="350" y="305" text-anchor="middle" fill="#fff" font-size="12" font-weight="800" letter-spacing="2.5">NOW</text>
+
+          <!-- FUTURE YOU marker -->
+          <circle cx="780" cy="16" r="14" fill="rgba(255,255,255,0.15)"/>
+          <circle cx="780" cy="16" r="5" fill="#fff"/>
+          <text x="772" y="14" text-anchor="end" fill="#fff" font-size="13" font-weight="800" letter-spacing="1.5">FUTURE YOU</text>
+          <text x="772" y="30" text-anchor="end" fill="rgba(255,255,255,0.55)" font-size="10" letter-spacing="1.5">+15 YEARS</text>
+
+          <!-- Axis labels -->
+          <text x="40" y="305" font-size="10" fill="rgba(255,255,255,0.45)" letter-spacing="1.5">A GENERATION AGO</text>
+          <text x="190" y="282" font-size="9" fill="rgba(255,255,255,0.3)" text-anchor="middle">·</text>
+        </svg>
       </div>
+      <div class="yah-cap">The Indigenous economy in Canada is already over <strong>$100 billion</strong> — and it's growing faster than the general economy. <strong>The next decade is yours.</strong></div>
+    </div>
 
-      <!-- PIVOT DIVIDER -->
-      <div class="act2-pivot">
-        <div class="pivot-line"></div>
-        <div class="pivot-mark">
-          <div class="pivot-arrow">→</div>
-          <div class="pivot-label">The<br/>Flip</div>
-        </div>
-        <div class="pivot-line"></div>
+    <!-- Anchor quote: the page's pivot -->
+    <div class="anchor-quote">
+      <p>"Moving from a <em>'happened to us'</em> to a <em>'designed by us'</em> approach."</p>
+      <cite>— Carol Anne Hilton · Indigenomics</cite>
+    </div>
+
+    <!-- ============ A NEW STORY · INDIGENOMICS ============ -->
+    <h3 style="margin-top: 60px; font-size: 22px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; font-weight: 800;">A New Story</h3>
+    <p class="text-muted" style="margin-bottom: 24px; max-width: 760px;">Carol Anne Hilton named what's happening. She called it <strong style="color:#fff">Indigenomics</strong> — and she wrote the book on it. Read it when you can. Until then, here's the headline.</p>
+
+    <div class="big-quote">
+      <p>"The rise of Indigenous economic empowerment is <strong>shaping the future of this country.</strong>"</p>
+      <cite>— Carol Anne Hilton · Indigenomics</cite>
+    </div>
+
+    <div class="quotes-grid">
+      <blockquote class="quote-card">
+        <p>"The future value of Indigenous wealth is based on the <em>quality of our relationships</em> — for its return with interest over time."</p>
+        <cite>— Carol Anne Hilton · Indigenomics</cite>
+      </blockquote>
+      <blockquote class="quote-card">
+        <p>"It is time to increase the presence, visibility, and role of the emerging modern Indigenous economy. <em>This is the highest intention of Indigenomics.</em>"</p>
+        <cite>— Carol Anne Hilton · Indigenomics</cite>
+      </blockquote>
+    </div>
+
+    <!-- ============ THE STARTING LINE · BRIEF REALITY ============ -->
+    <h3 style="margin-top: 80px; font-size: 22px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; font-weight: 800;">The Starting Line</h3>
+    <p class="text-muted" style="margin-bottom: 24px; max-width: 760px;">We're not pretending the present is fair — it isn't. <strong style="color:#fff">But this is the starting line. Not the story.</strong></p>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="card-label">01 · The Reality</div>
+        <div class="card-title">Status Land</div>
+        <p class="card-text">Couldn't be mortgaged. That blocked a whole generation from compounding wealth the way the wider economy did.</p>
       </div>
-
-      <!-- RIGHT · NOW -->
-      <div class="act2-side act2-now">
-        <div class="side-meta">
-          <span class="side-tag now">Now</span>
-          <span class="side-sub">Indigenomics · The Front Edge</span>
-        </div>
-        <h3 class="side-title">The Rules<br/>Have Changed.</h3>
-
-        <div class="now-hero">
-          <div class="now-hero-num">$100<span class="b">B</span><span class="plus">+</span></div>
-          <div class="now-hero-cap">The Indigenous Economy In Canada</div>
-        </div>
-
-        <div class="now-stats">
-          <div class="now-stat">
-            <div class="now-stat-v">↑ Faster</div>
-            <div class="now-stat-l">Growing Faster Than The General Economy</div>
-          </div>
-          <div class="now-stat">
-            <div class="now-stat-v">Gen 1</div>
-            <div class="now-stat-l">You're The First Generation Of What Comes Next</div>
-          </div>
-        </div>
-
-        <div class="side-quote now-quote">You're not behind. <strong>You're early.</strong></div>
+      <div class="card">
+        <div class="card-label">02 · The Reality</div>
+        <div class="card-title">Banking Blocked</div>
+        <p class="card-text">No mortgages. No business loans. No way to compound wealth across generations.</p>
       </div>
     </div>
 
-    <div class="section-nav" style="margin-top: 26px; padding-top: 22px;">
+    <!-- ============ RESOURCEFULNESS OVER RESOURCES ============ -->
+    <h3 style="margin-top: 80px; font-size: 22px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; font-weight: 800;">Resourcefulness Over Resources</h3>
+    <p class="text-muted" style="margin-bottom: 24px; max-width: 760px;">It might not look like you have a lot of resources right now. <strong style="color:#fff">That's fine — resourcefulness wins anyway.</strong> Use what's there. Get creative with the rest.</p>
+
+    <div class="anchor">
+      <div class="anchor-label">What's Actually Available</div>
+      <div class="anchor-text">
+        Local economic development offices. Indigenous business funding. Mentorship programs. AI that can teach you almost anything for free. <strong>It's not perfect. It's not always fast.</strong> But it exists — and it's more than your ancestors had. Use what's there. Be resourceful with the rest.
+      </div>
+    </div>
+
+    <!-- ============ CLOSING BIG QUOTE ============ -->
+    <div class="big-quote big-quote-final" style="margin-top: 64px;">
+      <p>"It's time for a <strong>new story</strong> — of economic empowerment, inclusion, and of Indigenous Peoples taking our seats at the economic table of this country."</p>
+      <cite>— Carol Anne Hilton · Indigenomics</cite>
+    </div>
+
+    <div class="anchor mt-40">
+      <div class="anchor-label">The Whole Section In One Line</div>
+      <div class="anchor-text">
+        We're creating a brighter future. We're upward trending. The opportunity is growing. <strong>Get your mindset right. Build your skills. Position yourself in it.</strong>
+      </div>
+    </div>
+
+    <div class="section-nav" style="margin-top: 40px; padding-top: 22px;">
       <button onclick="showSection('act1')"><span class="nav-side">← Back<strong>01 · What Is Money?</strong></span></button>
       <button class="next" onclick="showSection('act3')"><span class="nav-side">Next →<strong>03 · The Four Paths</strong></span></button>
     </div>
